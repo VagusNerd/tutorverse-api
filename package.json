@@ -1,21 +1,25 @@
 {
-  "name": "tutorverse2",
+  "name": "server",
   "version": "1.0.0",
   "main": "index.js",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "license": "MIT",
-  "dependencies": {
-    "bootstrap": "^4.6.0",
-    "concurrently": "^6.5.0",
-    "nodemon": "^2.0.15",
-    "react-bootstrap": "^2.0.4"
-  },
+  "private": true,
+  "type": "module",
   "scripts": {
-    "client": "yarn workspace client start",
-    "server": "yarn workspace server start",
-    "start": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn client\""
+    "start": "nodemon --exec babel-node ./index.js"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "nodemon": "^2.0.7"
   }
 }
